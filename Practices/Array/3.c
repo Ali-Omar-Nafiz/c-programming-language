@@ -4,7 +4,7 @@ int main()
     int n;
     printf("Enter the 'N':");
     scanf("%d", &n);
-    int array[n], ind = 0;
+    int array[n], ind = 0, sum = 0;
     ;
     printf("\nEnter the values:");
 
@@ -12,16 +12,14 @@ int main()
     {
         printf("\narray[%d]=", ind);
         scanf("%d", &array[ind]);
+        if (array[ind] % 2 == 0)
+        {
+            sum += array[ind];
+        }
+
         ind++;
     }
-    
-    ind = (n - 1);
-    printf("\nPrint the reverse array values:");
-    while (ind >= 0)
-    {
-        printf("\narray[%d]=%d", ind, array[ind]);
-        ind--;
-    }
+    printf("\nSum=%d", sum);
 
     return 0;
 }

@@ -4,24 +4,21 @@ int main()
     int n;
     printf("Enter the 'N':");
     scanf("%d", &n);
-    int array[n], ind = 0;
+    float array[n],sum=0,avg;
+    int  ind = 0;
     ;
     printf("\nEnter the values:");
 
     while (ind < n)
     {
         printf("\narray[%d]=", ind);
-        scanf("%d", &array[ind]);
+        scanf("%f", &array[ind]);
+        sum+=array[ind];
+
         ind++;
     }
-    
-    ind = (n - 1);
-    printf("\nPrint the reverse array values:");
-    while (ind >= 0)
-    {
-        printf("\narray[%d]=%d", ind, array[ind]);
-        ind--;
-    }
-
+    printf("\nSum=%.2f",sum);
+    avg=sum/n;
+    printf("\nAverage=%.2f",avg);
     return 0;
 }

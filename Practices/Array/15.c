@@ -3,24 +3,28 @@ int main()
 {
     int n;
     printf("Enter the 'N':");
-    scanf("%d", &n);
+    scanf(" %d", &n);
     int array[n], ind = 0;
-    ;
-    printf("\nEnter the values:");
-
     while (ind < n)
     {
         printf("\narray[%d]=", ind);
-        scanf("%d", &array[ind]);
+        scanf(" %d", &array[ind]);
         ind++;
     }
-    
-    ind = (n - 1);
-    printf("\nPrint the reverse array values:");
-    while (ind >= 0)
+    ind = 0;
+    while (ind < n)
+    {
+        if (array[ind] % 3 == 0)
+        {
+            array[ind] = -1;
+        }
+        ind++;
+    }
+    ind = 0;
+    while (ind < n)
     {
         printf("\narray[%d]=%d", ind, array[ind]);
-        ind--;
+        ind++;
     }
 
     return 0;
