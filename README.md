@@ -1,1 +1,1 @@
-_**Materials that are related to C Programming**_
+_**C Programming practices for newbies**_
