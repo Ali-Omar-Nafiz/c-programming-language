@@ -1,0 +1,12 @@
+1 Zahid
+2 Tanvir
+3 Atik
+This line was added using fputs
+This line was added using fputc
+This line was added using fprintf
+1 Zahid
+2 Tanvir
+3 Atik
+This line was added using fputs
+This line was added using fputc
+This line was added using fprintf
