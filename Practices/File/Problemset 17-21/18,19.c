@@ -24,19 +24,20 @@ int main()
 
     // Read entire file character by character using fgetc()
     printf("Entire file (fgetc):\n");
-  for(char c = fgetc(fptr); c!= EOF;)
+    char c;
+    while ((c = fgetc(fptr)) != EOF)               //safest way
     {
-        printf("%c", c);
-        c = fgetc(fptr);
+        printf("%c",c);
     }
 
-/*or,    while(1)
-    {
-        char c = fgetc(fptr);
-        if(feof(fptr))break;
-        printf("%c", c);
-    }
-*/
+
+    /*or,    while(1)
+        {
+            char c = fgetc(fptr);
+            if(feof(fptr))break;
+            printf("%c", c);
+        }
+    */
 
     printf("\n");
 
