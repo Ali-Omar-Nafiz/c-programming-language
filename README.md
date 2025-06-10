@@ -5,14 +5,23 @@ This repository contains my practice code, small projects, and exercises written
 ## 🛠 Contents
 
 The code is organized into categories for clarity:
+
 C_Programming/
+
 ├── Basics/ # Hello world, data types, input/output
+
 ├── ControlFlow/ # If-else, switch, loops
+
 ├── Functions/ # Function usage, recursion
+
 ├── Arrays/ # 1D/2D arrays, string handling
+
 ├── Pointers/ # Pointer basics, pointer arithmetic
+
 ├── Structures/ # Structs, unions, typedefs
+
 ├── Files/ # File handling
+
 └── MiniProjects/ # Small projects like calculator, to-do list, etc.
 
 
