@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     // 1. String Declaration
-    string word = "HelloWorld";
+    string word = "HelloWorld";  //cin>>word; //to take input until first white space
 
     // 2. String Indexing
     cout << "Character at index 0: " << word[0] << endl;
@@ -41,7 +41,8 @@ int main() {
 
     return 0;
 }
-/* Alternative way using char array like c
+
+/* Alternative way using char array like C
 
 #include <iostream>
 using namespace std;
@@ -51,7 +52,7 @@ int main()
     char str[100];
 
     cout << "Enter a string: ";
-    cin >> str;
+    cin >> str;  // only takes input until first space
     cout << "You entered: " << str << endl;
 
     cout << "\nEnter another string: ";
@@ -61,4 +62,20 @@ int main()
     return 0;
 }
 
-/*
+/* Alternative way using getline() to take full line input (including spaces)
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string input;
+
+    cout << "Enter a full line: ";
+    getline(cin, input);  // takes full line input
+    cout << "You entered: " << input << endl;
+
+    return 0;
+}
+*/
