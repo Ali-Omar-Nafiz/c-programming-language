@@ -27,14 +27,14 @@ int main(){
 			scanf("%d",&list[i].scores[j]);
 		}
 	}
-	printf("---Squid Game,UIU---\n");
 	int choice;
+	do{
+	printf("---Squid Game,UIU---\n");
 	printf("1. Update player status based on Total Scores.\n");
 	printf("2. Search player by ID\n");
 	printf("3. Display All Players\n");
 	printf("4. Display Total Prize money and Alive Players\n");
 	printf("5. Exit\n");
-	do{
 	printf("Enter your choice: ");
 	scanf("%d",&choice);
 	switch(choice){
@@ -80,7 +80,7 @@ void displayAll(struct player players[],int n){
 	printf("ID    Name    Total Scores     Status\n");
 	printf("-------------------------------------\n");
 	for(int i=0;i<n;i++){
-		printf("%d    %s    %d    %s\n",players[i].id,players[i].name,calculateTotal(players[i]),players[i].status);
+		printf("%d%s%d%s\n",players[i].id,players[i].name,calculateTotal(players[i]),players[i].status);
 	}
 }
 void displayPrizeAndAlive(struct player players[],int n){
