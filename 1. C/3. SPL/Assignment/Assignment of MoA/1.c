@@ -1,5 +1,4 @@
 #include<stdio.h>
-
 #define SIZE 1000
 int main() {
   char mainString[SIZE], subString[SIZE];

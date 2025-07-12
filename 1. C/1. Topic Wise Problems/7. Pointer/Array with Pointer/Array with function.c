@@ -1,88 +1,84 @@
-#include<stdio.h>
+#include <stdio.h>
 
 // Function Prototypes
-void oneDpassColumnKnown(int a[5]);                   // 1D array with known column size
-void oneDpassColumnUnknown(int a[], int size);        // 1D array with unknown size
-void oneDpassByPointer(int *a, int size);             // 1D array via pointer
+void printOneDArray_FixedSize(int arr[5]);
+void printOneDArray_VariableSize(int arr[], int size);
+void printOneDArray_ByPointer(int *arr, int size);
 
-void twoDpassRowColumnKnown(int a[2][5]);             // 2D array with known row and column
-void twoDpassRowUnknown(int a[][5], int rsize);       // 2D array with unknown row
-void twoDpassByPointer(int *a, int rsize, int csize); // 2D array via pointer
+void printTwoDArray_FixedSize(int arr[2][5]);
+void printTwoDArray_RowVariable(int arr[][5], int rows);
+void printTwoDArray_ByPointer(int *arr, int rows, int cols);
 
-int *return_oneDArray();                              // Return 1D array
-int *return_twoDArray();                              // Return 2D array as pointer to 1D
-int *return_twoDArray_with_size(int *rows, int *cols);// Return 2D array with row & column size
+int *getOneDArray();
+int *getTwoDArray();
+int *getTwoDArray_WithSize(int *rows, int *cols);
 
 int main()
 {
     // --- One Dimensional Arrays ---
 
-    int oneDarr1[5] = {1, 2, 3, 4, 5};
-    oneDpassColumnKnown(oneDarr1);
-    oneDpassByPointer(oneDarr1, 5);
+    int oneDArray1[5] = {1, 2, 3, 4, 5};
+    printOneDArray_FixedSize(oneDArray1);
+    printOneDArray_ByPointer(oneDArray1, 5);
 
-    int oneDarr2[] = {12, 13, 14, 15, 16};
-    int size = sizeof(oneDarr2) / sizeof(oneDarr2[0]);
-    oneDpassColumnUnknown(oneDarr2, size);
-    oneDpassByPointer(oneDarr2, size);
+    int oneDArray2[] = {12, 13, 14, 15, 16};
+    int oneDArray2_size = sizeof(oneDArray2) / sizeof(oneDArray2[0]);
+    printOneDArray_VariableSize(oneDArray2, oneDArray2_size);
+    printOneDArray_ByPointer(oneDArray2, oneDArray2_size);
 
     printf("\n");
 
     // --- Two Dimensional Arrays ---
 
-    int twoDarr1[2][5] = {
+    int twoDArray1[2][5] = {
         {1, 2, 3, 4, 5},
         {6, 7, 8, 9, 10}
     };
-    twoDpassRowColumnKnown(twoDarr1);
-    twoDpassByPointer(&twoDarr1[0][0], 2, 5);
+    printTwoDArray_FixedSize(twoDArray1);
+    printTwoDArray_ByPointer(&twoDArray1[0][0], 2, 5);
 
-    int twoDarr2[][5] = {
+    int twoDArray2[][5] = {
         {10, 11, 12, 13, 14},
         {16, 17, 18, 19, 20}
     };
-    int rsize = sizeof(twoDarr2) / sizeof(twoDarr2[0]);
-    int csize = sizeof(twoDarr2[0]) / sizeof(twoDarr2[0][0]);
-    twoDpassRowUnknown(twoDarr2, rsize);
-    twoDpassByPointer(&twoDarr2[0][0], rsize, csize);
+    int rows = sizeof(twoDArray2) / sizeof(twoDArray2[0]);
+    int cols = sizeof(twoDArray2[0]) / sizeof(twoDArray2[0][0]);
+    printTwoDArray_RowVariable(twoDArray2, rows);
+    printTwoDArray_ByPointer(&twoDArray2[0][0], rows, cols);
 
     printf("\n");
 
     // --- Returning Arrays ---
 
-    // 1D array
-    int *oneDarr = return_oneDArray();
+    int *oneDArray_returned = getOneDArray();
     printf("Returned 1D Array:\n");
     for(int i = 0; i < 5; i++)
     {
-        printf("%d ", *(oneDarr + i));
+        printf("%d ", *(oneDArray_returned + i));
     }
     printf("\n");
 
-    // 2D array
-    int *twoDarr = return_twoDArray();
+    int *twoDArray_returned = getTwoDArray();
     printf("Returned 2D Array:\n");
     for(int i = 0; i < 2; i++)
     {
         for(int j = 0; j < 5; j++)
         {
-            printf("%d ", *(twoDarr + i * 5 + j));
+            printf("%d ", *(twoDArray_returned + i * 5 + j));
         }
         printf("\n");
     }
 
     printf("\n");
 
-    // --- Returning 2D Array with Size ---
-
-    int rows, cols;
-    int *arr_with_size = return_twoDArray_with_size(&rows, &cols);
-    printf("Returned 2D Array with Size (%d x %d):\n", rows, cols);
-    for(int i = 0; i < rows; i++)
+    int retRows, retCols;
+    int *twoDArray_withSize = getTwoDArray_WithSize(&retRows, &retCols);
+    printf("Returned 2D Array with Size (%d x %d):\n", retRows, retCols);
+    for(int i = 0; i < retRows; i++)
     {
-        for(int j = 0; j < cols; j++)
+        for(int j = 0; j < retCols; j++)
         {
-            printf("%d ", *(arr_with_size + i * cols + j));
+            printf("%d ", *(twoDArray_withSize + i * retCols + j));
         }
         printf("\n");
     }
@@ -92,93 +88,93 @@ int main()
 
 // --- Function Definitions ---
 
-void oneDpassByPointer(int *a, int size)
+void printOneDArray_ByPointer(int *arr, int size)
 {
-    printf("By Pointer:\n");
+    printf("One-D Array (By Pointer):\n");
     for(int i = 0; i < size; i++)
     {
-        printf("%d ", *(a + i));
+        printf("%d ", *(arr + i));
     }
     printf("\n");
 }
 
-void oneDpassColumnKnown(int a[5])
+void printOneDArray_FixedSize(int arr[5])
 {
-    printf("1D Array 1:\n");
+    printf("One-D Array (Fixed Size):\n");
     for(int i = 0; i < 5; i++)
     {
-        printf("%d ", a[i]);
+        printf("%d ", arr[i]);
     }
     printf("\n");
 }
 
-void oneDpassColumnUnknown(int a[], int size)
+void printOneDArray_VariableSize(int arr[], int size)
 {
-    printf("1D Array 2:\n");
+    printf("One-D Array (Variable Size):\n");
     for(int i = 0; i < size; i++)
     {
-        printf("%d ", a[i]);
+        printf("%d ", arr[i]);
     }
     printf("\n");
 }
 
-void twoDpassByPointer(int *a, int rsize, int csize)
+void printTwoDArray_ByPointer(int *arr, int rows, int cols)
 {
-    printf("By Pointer:\n");
-    for(int i = 0; i < rsize; i++)
+    printf("Two-D Array (By Pointer):\n");
+    for(int i = 0; i < rows; i++)
     {
-        for(int j = 0; j < csize; j++)
+        for(int j = 0; j < cols; j++)
         {
-            printf("%d ", *(a + i * csize + j));
+            printf("%d ", *(arr + i * cols + j));
         }
         printf("\n");
     }
 }
 
-void twoDpassRowColumnKnown(int a[2][5])
+void printTwoDArray_FixedSize(int arr[2][5])
 {
-    printf("2D Array 1:\n");
+    printf("Two-D Array (Fixed Size):\n");
     for(int i = 0; i < 2; i++)
     {
         for(int j = 0; j < 5; j++)
         {
-            printf("%d ", a[i][j]);
+            printf("%d ", arr[i][j]);
         }
         printf("\n");
     }
 }
 
-void twoDpassRowUnknown(int a[][5], int rsize)
+void printTwoDArray_RowVariable(int arr[][5], int rows)
 {
-    printf("2D Array 2:\n");
-    for(int i = 0; i < rsize; i++)
+    printf("Two-D Array (Row Variable):\n");
+    for(int i = 0; i < rows; i++)
     {
         for(int j = 0; j < 5; j++)
         {
-            printf("%d ", a[i][j]);
+            printf("%d ", arr[i][j]);
         }
         printf("\n");
     }
 }
 
-int *return_oneDArray()
+int *getOneDArray()
 {
-    static int a[5] = {1, 2, 3, 4, 5};
-    return a;
+    static int arr[5] = {1, 2, 3, 4, 5};
+    return arr;
 }
 
-int *return_twoDArray()
+int *getTwoDArray()
 {
-    static int a[2][5] = {
+    static int arr[2][5] = {
         {1, 2, 3, 4, 5},
         {6, 7, 8, 9, 10}
     };
-    return &a[0][0];
+    return &arr[0][0];
 }
 
-int *return_twoDArray_with_size(int *rows, int *cols)
+int *getTwoDArray_WithSize(int *rows, int *cols)
 {
-    static int a[3][4] = {
+    static int arr[3][4] = {
         {1, 2, 3, 4},
         {5, 6, 7, 8},
         {9, 10, 11, 12}
@@ -187,5 +183,6 @@ int *return_twoDArray_with_size(int *rows, int *cols)
     *rows = 3;
     *cols = 4;
 
-    return &a[0][0];
+    return &arr[0][0];
 }
+
