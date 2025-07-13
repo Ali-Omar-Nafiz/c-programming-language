@@ -73,8 +73,16 @@ void printSummary(struct Course courses[],int count)
 {
     for(int i=0; i<count; i++)
     {
-        float avg=courses[i].enrolled/courses[i].instructors;
-        printf("Code: %s, Title: %s,Credit: %c, Enrolled students:%d, Instructors: %d, Average: %f\n",courses[i].code,courses[i].title,courses[i].code[strlen(courses[i].code-1)],courses[i].enrolled,courses[i].instructors,avg);
+       float avg=courses[i].enrolled/courses[i].instructors;
+       char credit = courses[i].code[strlen(courses[i].code) - 1];
+
+       printf("Code: %s, Title: %s, Credit: %c, Enrolled students: %d, Instructors: %d, Average: %.2f\n",
+       courses[i].code,
+       courses[i].title,
+       credit,
+       courses[i].enrolled,
+       courses[i].instructors,
+       avg);
     }
 }
 int isOffered(char course_name[],char semester[],struct Course courses[],int count)
