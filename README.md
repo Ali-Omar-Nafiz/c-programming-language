@@ -1,64 +1,18 @@
-# 🧠 C Programming Practice
+This repository showcases the way I learned and practiced the C programming language.
 
-This repository contains my practice code, small projects, and exercises written in the C programming language. It serves as a personal learning log and reference.
+I completed two university courses to learn C programming:
 
-## 🛠 Contents
+1. Introduction to Programming Language (ICS – 1 credit hour)
 
-The code is organized into categories for clarity:
+2. Structured Programming Language (SPL – 4 credit hours)
 
-C_Programming/
+Although I learned most of the concepts from various online resources such as GeeksforGeeks, Programiz.com, and W3Schools, the faculty members of these courses guided me significantly and helped me strengthen my understanding.
 
-├── Basics/ # Hello world, data types, input/output
+Useful Online Sources:
+1. https://www.geeksforgeeks.org/c/c-programming-language/
+2. https://www.programiz.com/c-programming
+3. https://www.w3schools.com/c/index.php
 
-├── ControlFlow/ # If-else, switch, loops
-
-├── Functions/ # Function usage, recursion
-
-├── Arrays/ # 1D/2D arrays, string handling
-
-├── Pointers/ # Pointer basics, pointer arithmetic
-
-├── Structures/ # Structs, unions, typedefs
-
-├── Files/ # File handling
-
-└── MiniProjects/ # Small projects like calculator, to-do list, etc.
-
-
-## 🚀 Goals
-
-- Strengthen C fundamentals
-- Practice writing clean and efficient code
-- Explore basic data structures and memory handling in C
-- Work on small terminal-based projects
-
-
-## 🚀 Topics Covered
-- Basics of C syntax and structure
-- Control statements (if, loops, switch)
-- Functions and recursion
-- Arrays, strings, pointers
-- Structures and memory management
-- File handling
-- Mini projects (optional)
-
-## 🛠 Tools Used
-- GCC (GNU Compiler Collection)
-- `make` (optional for automation)
-- VS Code / Vim / any preferred IDE
-
-## 📌 How to Compile & Run
-
-To compile a program:
-```bash
-gcc filename.c -o output
-./output
-
-## For debugging:
-gcc -g filename.c -o output
-gdb output
-
-Or use make if available:
-make filename
-
-Happy coding in C! 🐚
+For Practice:
+1. https://www.geeksforgeeks.org/c/c-programming-examples/
+2. https://codeforwin.org/c-programming-examples-exercises-solutions-beginners#google_vignette
