@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1750583774 source:d:\c_programming\projects\c projects\eid-ul-adha charity management\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+
