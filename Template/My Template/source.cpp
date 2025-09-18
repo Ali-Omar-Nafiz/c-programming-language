@@ -2,6 +2,7 @@
 using namespace std;
 
 #define testcase int tc; cin >> tc; for (int i = 1; i <= tc; i++)
+#define nline "\n"
 // #define int long long
 using ll = long long;
 const int M = 1e5, M2 = 2e5, OO = 1e9 + 7, MOD = 998244353;
