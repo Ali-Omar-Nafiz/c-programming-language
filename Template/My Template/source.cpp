@@ -32,10 +32,23 @@ int lcm(int a, int b) {
     return (a / gcd(a, b)) * b;
 }
 
+int stringToInt(string s) {
+    int i = 0, ret = 0;
+    bool neg = false;
+    if (s[0] == '-') {
+        neg = true;
+        i = 1;
+    }
+    for (; i < s.size(); i++) {
+        ret = ret * 10 + (s[i] - '0');
+    }
+    return neg ? -ret : ret;
+}
+
 void solve() {}
 signed main() {
     io();
-      testcase 
+      // testcase 
         solve();
     return 0;
 }
