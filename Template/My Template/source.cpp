@@ -19,12 +19,15 @@ void io() {
     // freopen("output.txt", "w", stdout);
     // #endif
 }
+
 long long ceil(long long a, long long b) {
     return (a + b - 1) / b;
 }
+
 int gcd(int a, int b) {
     return b == 0 ? a : gcd(b, a % b);
 }
+
 int lcm(int a, int b) {
     return (a / gcd(a, b)) * b;
 }
@@ -32,8 +35,7 @@ int lcm(int a, int b) {
 void solve() {}
 signed main() {
     io();
-      testcase {
+      testcase 
         solve();
-      }
     return 0;
 }
