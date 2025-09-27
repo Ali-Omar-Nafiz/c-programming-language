@@ -39,10 +39,16 @@ int stringToInt(string s) {
         neg = true;
         i = 1;
     }
-    for (; i < s.size(); i++) {
+    for (; i < (int)s.size(); i++) {
         ret = ret * 10 + (s[i] - '0');
     }
     return neg ? -ret : ret;
+}
+
+int countDigits(int n) {
+    n = abs(n);
+    if (n == 0) return 1;
+    return (int)log10(n) + 1;
 }
 
 void solve() {}
