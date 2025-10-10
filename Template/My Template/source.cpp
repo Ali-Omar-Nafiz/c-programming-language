@@ -28,6 +28,10 @@ ll ceilDiv(ll a, ll b) {
     return (a + b - 1) / b;
 }
 
+double logBase(double a, double b) {
+    return log2(a) / log2(b);
+}
+
 ll gcd(ll a, ll b) {
     return b == 0 ? a : gcd(b, a % b);
 }
