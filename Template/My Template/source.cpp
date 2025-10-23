@@ -61,7 +61,7 @@ int countDigits(ll n) {
 
 void solve() {}
 
-int main() {
+signed main() {
     io();
     testcase
         solve();
