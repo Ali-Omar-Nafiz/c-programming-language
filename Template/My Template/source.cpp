@@ -4,6 +4,7 @@ using namespace std;
 using ll = long long;
 
 #define FAST_IO ios::sync_with_stdio(false); cin.tie(nullptr)
+#define endl '\n'
 #define int long long
 
 void solve() {}
