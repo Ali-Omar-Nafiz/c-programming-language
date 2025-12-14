@@ -7,6 +7,10 @@ using ll = long long;
 #define endl '\n'
 #define int long long
 
+int ceilDiv(int a, int b) {
+    return (a + b - 1) / b;
+}
+
 void solve() {}
 
 signed main() {
