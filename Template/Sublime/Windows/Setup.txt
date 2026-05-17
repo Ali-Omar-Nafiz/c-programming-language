@@ -1,0 +1,13 @@
+Prerequisite:
+Mingw: https://www.geeksforgeeks.org/cpp/installing-mingw-tools-for-c-c-and-changing-environment-variable/
+Sublime: https://www.geeksforgeeks.org/installation-guide/how-to-install-sublime-text-3-in-windows/
+
+Build System:
+{
+    "cmd": ["g++.exe", "-std=c++17", "${file}",
+            "-o", "${file_base_name}.exe",
+            "&&", "${file_base_name}.exe<inputf.in>outputf.out"],
+    "shell":true,
+    "working_dir":"$file_path",
+    "selector":"source.cpp"
+}
