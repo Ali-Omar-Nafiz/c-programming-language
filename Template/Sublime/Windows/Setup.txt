@@ -1,8 +1,8 @@
 Prerequisite:
-Mingw: https://www.geeksforgeeks.org/cpp/installing-mingw-tools-for-c-c-and-changing-environment-variable/
-Sublime: https://www.geeksforgeeks.org/installation-guide/how-to-install-sublime-text-3-in-windows/
+Mingw
+Sublime
 
-Build System:
+Build System: Windows
 {
     "cmd": ["g++.exe", "-std=c++17", "${file}",
             "-o", "${file_base_name}.exe",
@@ -10,4 +10,13 @@ Build System:
     "shell":true,
     "working_dir":"$file_path",
     "selector":"source.cpp"
+}
+
+Build System: Linux
+{
+    "shell_cmd": "g++ -std=c++17 \"${file}\" -o \"${file_path}/${file_base_name}\" && \"${file_path}/${file_base_name}\" < \"${file_path}/input.txt\" > \"${file_path}/output.txt\"",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "${file_path}",
+    "selector": "source.c++, source.cpp",
+    "encoding": "utf-8"
 }
